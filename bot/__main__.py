@@ -208,5 +208,4 @@ async def startup():
     await idle()
     await bot.stop()
     
-#bot.loop.run_until_complete(startup())
-bot.run()
+bot.loop.run_until_complete(startup())
