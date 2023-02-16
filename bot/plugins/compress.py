@@ -121,7 +121,7 @@ async def encode_it(input_file, output, message, obj, total_time): #duration
    while process.returncode != 0:
     try:
      await asyncio.sleep(3)
-     with open("/bot/progress.txt", 'r+') as file:
+     with open("progress.txt", 'r+') as file:
         text = file.read()
         frame = re.findall("frame=(\d+)", text)
         time_in_us=re.findall("out_time_ms=(\d+)", text)
