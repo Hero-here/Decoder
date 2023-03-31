@@ -1,0 +1,58 @@
+{
+  "name": "Encoder-Bot",
+  "description": "Encoders Video Into Different Codecs",
+  "keywords": [
+    "libx265",
+    "h265",
+    "HEVC" 
+  ],
+  "stack": "container",
+  "website": "https://x265.herokuapp.com/",
+  "repository": "https://github.com/Nirusaki/Encoder-Bot",
+  "logo": "https://i.ibb.co/qRHpPpW/DALL-E-2022-12-23-17-44-23-Anime-gamwr-boy-sitting-on-tower-watching-sky-at-dark-night-in-the-hidden.png",
+  "success_url": "/welcome",
+  "env": {
+    "BOT_TOKEN": {
+      "description": "A Token Given By @Botfather",
+      "value" : ""
+    },
+    "API_ID": {
+      "description": "Telegram API_ID",
+      "value": ""
+    },
+    "API_HASH": {
+        "description": "Telegram API_HASH",
+        "value": ""
+      },
+    "DOWNLOAD_DIR": {
+        "description": "Download Directory",
+        "value": "downloads/"
+      },
+    "AUTH_USERS": {
+        "description": "Authorised Users",
+        "value": "5703071595"
+      },
+    "LOG_CHANNEL": {
+        "description": "Log Channel ID",
+        "value": ""
+      },
+    "DATABASE_URL": {
+        "description": "Enter Database URL",
+        "value": ""
+      },
+    "UPDATES_CHANNEL": {
+        "description": "Enter Updates Channel ID",
+        "value": ""
+      },
+      "USERNAME": {
+        "description": "Enter Bot Username",
+        "value": ""
+      }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "standard-2x"
+    }
+  }
+}
