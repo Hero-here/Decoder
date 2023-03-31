@@ -5,4 +5,3 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 RUN apt update
 RUN apt install mediainfo -y
 COPY . .
-CMD ["bash","start.sh"]
