@@ -147,17 +147,20 @@ async def encode_it(input_file, output, message, obj, total_time): #duration
         fis = f'encodes/{dpcd[0]}'
         ottt = hbs(int(Path(fis).stat().st_size))
         elapsed_time = int(time_in_us)/1000000
+        bt_size = int(Path(fis).stat().st_size) # byte size
         difference = math.floor((total_time - elapsed_time) / float(speed))
         ETA = "-"
         if difference > 0:
           ETA = TimeFormatter(difference*1000)
         percentage = math.floor(elapsed_time * 100 / total_time)
         perc_str = '{0}%'.format(round(percentage, 2))
+        est_size = hbs(int((bt_size * 100) / percentage))
         prog_bar_str = '{0}{1}'.format(''.join([FINISHED_PROGRESS_STR for i in range(math.floor(percentage / 10))]), ''.join([UN_FINISHED_PROGRESS_STR for i in range(10 - math.floor(percentage / 10))]))
         stats = f'➤ **Ꭼnᴄᴏding** 🎖\n' \
                 f'➤ **Ꭲiʍᴇ Ꮮᴇfᴛ** ⏳ : {ETA}\n' \
                 f'➤ **Ꮯurrᴇnᴛ Ꮪizᴇ** 🖥 : {ottt}\n' \
                 f'➤ **Ꮲᴇrᴄᴇnᴛᴀgᴇ** 🗝 : {perc_str}\n' \
+                f'➤ **Estimated Size** : {est_size}\n' \
                 f'➤ {prog_bar_str}\n' \
                 f'➽───────────────❥'
         try:

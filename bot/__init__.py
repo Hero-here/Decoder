@@ -9,10 +9,12 @@ from pymongo import MongoClient
 
 if os.path.exists('config.env'):
   load_dotenv('config.env')
-
-os.makedirs('encodes/')
-os.makedirs('temp/')
-os.makedirs('downloads/')
+try:
+  os.makedirs('encodes/')
+  os.makedirs('temp/')
+  os.makedirs('downloads/')
+except:
+   pass
 
 class Config(object):
   BOT_TOKEN = str(os.environ.get("BOT_TOKEN"))
@@ -22,7 +24,7 @@ class Config(object):
   AUTH_USERS = list(set(int(x) for x in os.environ.get("AUTH_USERS").split()))
   LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL"))
   DATABASE_URL = str(os.environ.get("DATABASE_URL"))
-  UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL")
+  UPDATES_CHANNEL = "FIERCENETWORK"
   TEMP = 'temp/'
   USERNAME = str(os.environ.get("BOT_USERNAME"))
 

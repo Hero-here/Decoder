@@ -10,6 +10,7 @@ from bot.plugins.compress import mediainfo, renew, sysinfo
 from bot.plugins.utils import add_task1, on_task_complete
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from .plugins.devtools import exec_message_f, eval_message_f
+from .plugins.anilist import uploadanime
 from .plugins.extras import changeffmpeg , get_ffmpeg, upload_dir, download_dir, get_type, changemode, sample, vshots
 
 START_TIME = datetime.now()
@@ -186,7 +187,13 @@ async def help_message(bot, message):
 async def help_message(bot, message):
     if message.chat.id not in Config.AUTH_USERS:
       return await message.reply_text("**You Are Not Authorised To Use This Bot Contact @Nirusaki**")    
-    await sample(bot, message)         
+    await sample(bot, message)
+
+@bot.on_message(filters.incoming & filters.command(["find"]))
+async def help_message(app, message):
+    if message.chat.id not in Config.AUTH_USERS:
+      return await message.reply_text("**You Are Not Authorised To Use This Bot Contact @Nirusaki**")    
+    await uploadanime(app, message)     
 
 async def checkup():
  try:
