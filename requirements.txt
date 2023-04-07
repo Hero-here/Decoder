@@ -7,6 +7,6 @@ aiohttp
 python-dotenv
 hachoir
 anitopy
-pyromod
+pyromod==1.5
 asyncio
 AnilistPython
