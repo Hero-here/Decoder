@@ -22,7 +22,7 @@ class Config(object):
   API_HASH = str(os.environ.get("API_HASH"))
   DOWNLOAD_DIR = str(os.environ.get("DOWNLOAD_DIR"))
   AUTH_USERS = list(set(int(x) for x in os.environ.get("AUTH_USERS").split()))
-  LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL"))
+  LOG_CHANNEL = str(os.environ.get("LOG_CHANNEL"))
   DATABASE_URL = str(os.environ.get("DATABASE_URL"))
   UPDATES_CHANNEL = "FIERCENETWORK"
   TEMP = 'temp/'
